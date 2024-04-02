@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lavender-FE</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script type="module" src="js/main.js"></script>
+    </head>
+    <body lavender-bg-decoration="clouds" lavender-theme="light">
+        <dialog open id="lavender-loading">
+            <header><h2>Loading...</h2></header>
+            <p>
+                Lavender-FE is loading. Please wait, your friends will be here soon!
+                <br>
+                <button onclick="document.body.toggleAttribute('lavender-loaded', true)">(load)</button>
+            </p>
+            <noscript>
+                <p>
+                    Sorry! Lavender-FE requires JavaScript to function.
+                    Please enable it and reload the page.
+                    If this error persists, then update your web browser and clear data for the site.
+                </p>
+            </noscript>
+        </dialog>
+
+        <div id="lavender-app">
+            <div class="grid-area-corner lavender-logo">
+                <h1>Lavender</h1>
+            </div>
+
+            <header class="grid-area-header lavender-panel">
+                [descriptive page title] [some relevant controls] [a spacer] [generic controls]
+            </header>
+
+            <!-- https://stackoverflow.com/questions/22549766/should-a-nav-tag-be-outside-the-main-tag -->
+            <nav class="grid-area-nav lavender-panel">
+                <ul>
+                    <li>Home link</li>
+                    <li>A helpful link</li>
+                    <li>Another link</li>
+                </ul>
+            </nav>
+
+            <main id="lavender-main" class="grid-area-body">
+                <header><h2>Hello, world!</h2></header>
+                <p>
+                    This is the main home page. Stuff will be here.
+                </p>
+            </main>
+
+            <aside class="grid-area-sidebar lavender-panel">
+                <p>
+                    Notifications, widgets, relevant context, and other goodies here.
+                </p>
+            </aside>
+        </div>
+
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+    </body>
+</html>

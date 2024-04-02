@@ -1,0 +1,26 @@
+
+
+@media (min-width: 640px) {
+    #lavender-app {
+        padding: 15px;
+        grid-gap: 15px;
+    }
+
+    main, article, dialog, .lavender-panel {
+        box-shadow: 2px 2px 4px 2px #000000A0;
+    }
+}
+
+@media (min-width: 1024px) {
+    #lavender-app {
+        grid-template:
+            "corner header header" auto
+            "nav body sidebar" 1fr
+            / auto 1fr auto;
+    }
+
+    .grid-area-sidebar {
+        display: block;
+        grid-area: sidebar;
+    }
+}

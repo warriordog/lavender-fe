@@ -1,0 +1,21 @@
+{
+  "name": "lavender-fe",
+  "description": "a soft and comfy Fediverse frontend",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && node build/build.js",
+    "rebuild": "node build/clean.js && npm run build",
+    "lint": "eslint src/js/**/*.ts --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.57.0",
+    "@types/node": "^20.11.30",
+    "eslint": "^8.57.0",
+    "globals": "^15.0.0",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.4.0"
+  }
+}

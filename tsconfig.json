@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2020",
+
+    "sourceMap": true,
+    "declarationMap": true,
+    "declaration": true,
+
+    "incremental": true,
+    "composite": true,
+
+    "strict": true,
+    "types": [],
+
+    "rootDir": "./src/js",
+    "outDir": "./dist/js",
+    "tsBuildInfoFile": "./dist/js/tsconfig.tsbuildinfo"
+  },
+  "include": [
+    "./src/js/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

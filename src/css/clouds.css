@@ -1,0 +1,274 @@
+
+@keyframes animateCloud {
+    0% {
+        left: -238px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+/* based on https://codepen.io/Mark_Bowley/pen/LYZEBq */
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(2n + 1) {*/
+/*    --cloud-offset-0: 0/2;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(2n + 2) {*/
+/*    --cloud-offset-0: 1/2;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(3n + 1) {*/
+/*    --cloud-offset-1: 1/3;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(3n + 2) {*/
+/*    --cloud-offset-1: 0/3;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(3n + 3) {*/
+/*    --cloud-offset-1: 2/3;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5n + 1) {*/
+/*    transform: scale(0.65);*/
+/*    --cloud-offset-2: 2/5;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5n + 2) {*/
+/*    transform: scale(0.3);*/
+/*    --cloud-offset-2: 4/5;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5n + 3) {*/
+/*    transform: scale(0.5);*/
+/*    --cloud-offset-2: 1/5;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5n + 4) {*/
+/*    transform: scale(0.4);*/
+/*    --cloud-offset-2: 3/5;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5n + 5) {*/
+/*    transform: scale(0.55);*/
+/*    --cloud-offset-2: 0/5;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 1) {*/
+/*    animation: animateCloud 60s linear infinite;*/
+/*    animation-delay: 6s;*/
+/*    --cloud-offset-3: 3/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 2) {*/
+/*    animation: animateCloud 30s linear infinite;*/
+/*    --cloud-offset-3: 2/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 3) {*/
+/*    animation: animateCloud 55s linear infinite;*/
+/*    animation-delay: 5s;*/
+/*    --cloud-offset-3: 6/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 4) {*/
+/*    animation: animateCloud 35s linear infinite;*/
+/*    animation-delay: 1s;*/
+/*    --cloud-offset-3: 0/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 5) {*/
+/*    animation: animateCloud 50s linear infinite;*/
+/*    animation-delay: 4s;*/
+/*    --cloud-offset-3: 1/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 6) {*/
+/*    animation: animateCloud 40s linear infinite;*/
+/*    animation-delay: 2s;*/
+/*    --cloud-offset-3: 5/7;*/
+/*}*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7n + 7) {*/
+/*    animation: animateCloud 45s linear infinite;*/
+/*    animation-delay: 3s;*/
+/*    --cloud-offset-3: 4/7;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration {*/
+/*    background: white;*/
+
+/*    border-radius: 100px;*/
+/*    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);*/
+
+/*    height: 120px;*/
+/*    width: 350px;*/
+
+/*    --cloud-workspace: calc(100vh - 170px);*/
+/*    top: calc(50px + (var(--cloud-workspace) * var(--cloud-offset-0)) + ((var(--cloud-workspace) / 2) * var(--cloud-offset-1)) + ((var(--cloud-workspace) / 6) * var(--cloud-offset-2)) + ((var(--cloud-workspace) / 30) * var(--cloud-offset-3)));*/
+/*    left: -350px;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:after,*/
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:before {*/
+/*    background: white;*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:after {*/
+/*    border-radius: 100px;*/
+
+/*    height: 100px;*/
+/*    left: 50px;*/
+/*    top: -50px;*/
+/*    width: 100px;*/
+/*}*/
+
+/*body[lavender-bg-decoration="clouds"] > .bg-decoration:before {*/
+/*    border-radius: 200px;*/
+
+/*    width: 180px;*/
+/*    height: 180px;*/
+/*    right: 50px;*/
+/*    top: -90px;*/
+/*}*/
+
+body[lavender-bg-decoration="clouds"] > .bg-decoration {
+    background-image: url("../img/cloud5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 238px;
+    height: 135px;
+
+    left: -238px;
+    z-index: -10;
+}
+
+
+/* Adjust the number of clouds based on screen height. */
+/* TODO change this when we add manual controls */
+@media (min-height: 135px) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(1) {
+        /* 4 */
+        display: block;
+        transform: scale(0.60);
+        animation: animateCloud 55s linear infinite;
+        animation-delay: 5s;
+        top: 40vh;
+    }
+}
+@media (min-height: calc(135px * 2)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(2) {
+        /* 6 */
+        display: block;
+        transform: scale(0.76);
+        animation: animateCloud 45s linear infinite;
+        animation-delay: 3s;
+        top: 10vh;
+    }
+}
+@media (min-height: calc(135px * 3)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(3) {
+        /* 3 */
+        display: block;
+        transform: scale(0.52);
+        animation: animateCloud 60s linear infinite;
+        animation-delay: 6s;
+        top: 80vh;
+    }
+}
+@media (min-height: calc(135px * 4)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(4) {
+        /* 5 */
+        display: block;
+        transform: scale(0.68);
+        animation: animateCloud 50s linear infinite;
+        animation-delay: 4s;
+        top: 60vh;
+    }
+}
+@media (min-height: calc(135px * 5)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(5) {
+        /* 7 */
+        display: block;
+        transform: scale(0.84);
+        animation: animateCloud 40s linear infinite;
+        animation-delay: 2s;
+        top: 30vh;
+    }
+}
+@media (min-height: calc(135px * 6)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(6) {
+        /* 2 */
+        display: block;
+        transform: scale(0.44);
+        animation: animateCloud 65s linear infinite;
+        animation-delay: 7s;
+        top: 0;
+    }
+}
+@media (min-height: calc(135px * 7)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(7) {
+        /* 8 */
+        display: block;
+        transform: scale(0.92);
+        animation: animateCloud 35s linear infinite;
+        animation-delay: 1s;
+        top: 70vh;
+    }
+}
+@media (min-height: calc(135px * 8)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(8) {
+        /* 1 */
+        display: block;
+        transform: scale(0.36);
+        animation: animateCloud 70s linear infinite;
+        animation-delay: 8s;
+        top: 50vh;
+    }
+}
+@media (min-height: calc(135px * 9)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(9) {
+        /* 9 */
+        display: block;
+        transform: scale(1.00);
+        animation: animateCloud 30s linear infinite;
+        animation-delay: 0s;
+        top: 20vh;
+    }
+}
+@media (min-height: calc(135px * 10)) {
+    body[lavender-bg-decoration="clouds"] > .bg-decoration:nth-child(10) {
+        /* 0 */
+        display: block;
+        transform: scale(0.28);
+        animation: animateCloud 75s linear infinite;
+        animation-delay: 9s;
+        top: 90vh;
+    }
+}
+
+/*
+ Order:
+ 463
+ 572
+ 8190
+ */
+
+/*
+ Position:
+ a  2    0px
+ b  6   10vh
+ c  9   20vh
+ d  7   30vh
+ e  4   40vh
+ f  1   50vh
+ g  5   60vh
+ h  8   70vh
+ i  3   80vh
+ j  0   90vh
+ */
+
+/*
+Size:
+9   1.00    1.00
+8   0.95    0.92
+7   0.90    0.84
+6   0.85    0.76
+5   0.80    0.68
+4   0.75    0.60
+3   0.70    0.52
+2   0.65    0.44
+1   0.60    0.36
+0   0.55    0.28
+ */

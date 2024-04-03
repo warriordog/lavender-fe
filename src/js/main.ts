@@ -5,6 +5,8 @@
  */
 
 // Mount the app
+import {MainModule} from "./mainModule.js";
+
 async function onready(): Promise<void> {
     return new Promise(resolve => {
         if (document.readyState === 'complete')
@@ -23,7 +25,10 @@ async function mountApp(): Promise<void> {
 
     // TODO implement the actual logic
 
-    // Initialize service container (async)
+    // Initialize service container
+    const module = new MainModule();
+    await module.initialize();
+
     // Restore state from browser storage (slow, async)
     // Create and mount main
 

@@ -7,7 +7,18 @@
         <link rel="stylesheet" href="css/main.css">
         <script type="module" src="js/main.js"></script>
     </head>
-    <body lavender-bg-decoration="clouds" lavender-theme="light">
+    <body lavender-bg-decoration="clouds" lavender-theme="light" lavender-bg-animated>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+        <div class="bg-decoration" aria-hidden="true"></div>
+
         <dialog open id="lavender-loading" class="lavender-panel">
             <header><h2>Loading...</h2></header>
             <p id="lavender-loading-text">
@@ -26,7 +37,9 @@
             <header id="lavender-header" class="lavender-panel">
                 <h1 class="lavender-logo">Lavender</h1>
                 <span>[descriptive page title] [some relevant controls]</span>
-                <span>[generic controls]</span>
+                <span class="toolbar">
+                    <button id="lav-header-toggle-fe-settings">settings</button>
+                </span>
             </header>
 
             <div id="lavender-grid">
@@ -54,15 +67,15 @@
             </div>
         </div>
 
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
-        <div class="bg-decoration" aria-hidden="true"></div>
+        <dialog id="lavender-fe-settings">
+            <fieldset>
+                <legend>Frontend Settings:</legend>
+
+                <label>
+                    <input type="checkbox" id="lav-fe-settings-bg-anim-enabled" checked>
+                    Animate background
+                </label>
+            </fieldset>
+        </dialog>
     </body>
 </html>

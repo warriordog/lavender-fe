@@ -10,34 +10,35 @@ async function onready(): Promise<void> {
         if (document.readyState === 'complete')
             resolve();
         else {
-            document.addEventListener('load', () => resolve());
+            window.addEventListener('load', () => resolve());
         }
     });
 }
 
-async function mountApp(selector: string): Promise<void> {
-    const element = document.querySelector<HTMLElement>(selector);
+async function mountApp(): Promise<void> {
+    const element = document.getElementById('lavender-app');
     if (!element) {
-        throw new Error(`Can't find mount point for "${selector}"`);
+        throw new Error("Can't find mount point for id 'lavender-app'");
     }
 
-    // TODO implement
-    element.textContent = 'Hello, world!';
+    // TODO implement the actual logic
 
     // Initialize service container (async)
     // Restore state from browser storage (slow, async)
     // Create and mount main
+
+    // Activate the page
+    document.body.toggleAttribute('lavender-loaded', true);
 }
 
-function mountError(selector: string, error: unknown): void {
+function mountError(error: unknown): void {
     console.error('Lavender failed to start! Exception caught: ', error);
 
-    const root = document.querySelector(selector) ?? document.body;
+    const root = document.getElementById('lavender-loading-text') ?? document.body;
     root.textContent = `Lavender failed to start! Exception caught: ${error}`;
 }
 
-const mountPoint = '#lavender-app';
 onready()
-    .then(() => mountApp(mountPoint))
-    .catch((e: unknown) => mountError(mountPoint, e))
+    .then(() => mountApp())
+    .catch((e: unknown) => mountError(e))
 ;

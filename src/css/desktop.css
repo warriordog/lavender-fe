@@ -1,26 +1,31 @@
 
 
 @media (min-width: 640px) {
-    #lavender-app {
-        padding: 15px;
-        grid-gap: 15px;
+    #lavender-grid {
+        padding: 10px;
+        grid-gap: 10px;
+        grid-template-columns: 0.5fr 1fr;
+
+        margin: 0 auto;
     }
 
-    main, article, dialog, .lavender-panel {
+    .lavender-panel {
         box-shadow: 2px 2px 4px 2px #000000A0;
+    }
+
+    #lavender-nav {
+        display: block;
     }
 }
 
 @media (min-width: 1024px) {
-    #lavender-app {
-        grid-template:
-            "corner header header" auto
-            "nav body sidebar" 1fr
-            / auto 1fr auto;
+    #lavender-grid {
+        padding: 15px;
+        grid-gap: 15px;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
     }
 
-    .grid-area-sidebar {
+    #lavender-sidebar {
         display: block;
-        grid-area: sidebar;
     }
 }

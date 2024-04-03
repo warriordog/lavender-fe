@@ -8,12 +8,10 @@
         <script type="module" src="js/main.js"></script>
     </head>
     <body lavender-bg-decoration="clouds" lavender-theme="light">
-        <dialog open id="lavender-loading">
+        <dialog open id="lavender-loading" class="lavender-panel">
             <header><h2>Loading...</h2></header>
-            <p>
+            <p id="lavender-loading-text">
                 Lavender-FE is loading. Please wait, your friends will be here soon!
-                <br>
-                <button onclick="document.body.toggleAttribute('lavender-loaded', true)">(load)</button>
             </p>
             <noscript>
                 <p>
@@ -25,35 +23,35 @@
         </dialog>
 
         <div id="lavender-app">
-            <div class="grid-area-corner lavender-logo">
-                <h1>Lavender</h1>
-            </div>
-
-            <header class="grid-area-header lavender-panel">
-                [descriptive page title] [some relevant controls] [a spacer] [generic controls]
+            <header id="lavender-header" class="lavender-panel">
+                <h1 class="lavender-logo">Lavender</h1>
+                <span>[descriptive page title] [some relevant controls]</span>
+                <span>[generic controls]</span>
             </header>
 
-            <!-- https://stackoverflow.com/questions/22549766/should-a-nav-tag-be-outside-the-main-tag -->
-            <nav class="grid-area-nav lavender-panel">
-                <ul>
-                    <li>Home link</li>
-                    <li>A helpful link</li>
-                    <li>Another link</li>
-                </ul>
-            </nav>
+            <div id="lavender-grid">
+                <!-- https://stackoverflow.com/questions/22549766/should-a-nav-tag-be-outside-the-main-tag -->
+                <nav id="lavender-nav" class="lavender-panel">
+                    <ul>
+                        <li>Home link</li>
+                        <li>A helpful link</li>
+                        <li>Another link</li>
+                    </ul>
+                </nav>
 
-            <main id="lavender-main" class="grid-area-body">
-                <header><h2>Hello, world!</h2></header>
-                <p>
-                    This is the main home page. Stuff will be here.
-                </p>
-            </main>
+                <main id="lavender-main">
+                    <header><h2>Hello, world!</h2></header>
+                    <p>
+                        This is the main home page. Stuff will be here.
+                    </p>
+                </main>
 
-            <aside class="grid-area-sidebar lavender-panel">
-                <p>
-                    Notifications, widgets, relevant context, and other goodies here.
-                </p>
-            </aside>
+                <aside id="lavender-sidebar" class="lavender-panel">
+                    <p>
+                        Notifications, widgets, relevant context, and other goodies here.
+                    </p>
+                </aside>
+            </div>
         </div>
 
         <div class="bg-decoration" aria-hidden="true"></div>
